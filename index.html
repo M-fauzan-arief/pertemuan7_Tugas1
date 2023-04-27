@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Form Registrasi</title>
+</head>
+<body>
+    <h1>Form Registrasi</h1>
+    <form>
+        <label>nama</label><br>
+        <input id="nama" type="text"><br><br>
+
+        <label>username</label><br>
+        <input id="username" type="text"><br><br>
+
+        <label>email</label><br>
+        <input id="email" type="text"><br><br>
+
+        <label>password</label><br>
+        <input id="password" type="text"><br><br>
+
+        <label>no Telp</label><br>
+        <input id="Telp" type="text"><br><br>
+
+        <label>Jenis Kelamin</label><br>
+        <input id="Kelamin" type="text"><br><br>
+
+        <label>Alamat Website</label><br>
+        <input id="Website" type="text"><br><br>
+
+        <input type="submit" value="OK" onclick="submitForm(event)">
+    </form>
+
+    <script>
+        function submitForm(event) {
+            event.preventDefault();
+
+            var nama = document.getElementById("nama");
+            var username = document.getElementById("username");
+            var email = document.getElementById("email");
+
+            if (nama.value.trim() === "") {
+                alert("Nama harus diisi");
+                return;
+            }
+
+            if (username.value.trim() === "") {
+                alert("Username harus diisi");
+                return;
+            }
+
+            if (email.value.trim() === "")  {
+                alert("Email tidak valid");
+                return;
+            }
+
+            var welcomeMessage = "Selamat " + nama.value + "! Anda berhasil untuk Registrasi";
+            alert(welcomeMessage);
+        }
+    </script>
+</body>
+</html>
